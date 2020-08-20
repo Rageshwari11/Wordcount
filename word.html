@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            overflow: hidden;
+            
+        }
+        body{
+            background: url('chat.jfif');
+            background-repeat: no-repeat;
+            background-size: cover;
+            align-items: center;
+        }
+        /*.container{
+        
+            padding: 0px;
+        }*/
+       
+        .butt{
+            display: block;
+            box-sizing: border-box;
+        }
+        form {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        textarea {
+        
+            border: 2px solid black;
+            display: flex;
+           /* box-sizing: border-box;*/
+            border-radius: 12px;
+            outline: none;
+            font-size: 1.2rem;
+            padding: 10px 2px;
+            box-shadow: 0 4px 4px 1px #aac1d3;
+            /*#b2bec3 #aac1d3 border-#0984e3 .btn bakclr-#74b9ff*/
+        }
+
+        .btn {
+            padding: 15px 30px;
+            background-color: rgb(32, 30, 30);
+            color: white;
+            border: 2px solid black;
+            border-radius: 10px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .btn:hover {
+            background: gray;
+        }
+        h1{
+            
+            text-align: center;
+            margin-top: 50px;
+            font-size: 50px;
+        }
+
+        p {
+            color: rgb(41, 40, 40);
+            font-size: 1.2rem;
+            
+            
+        }
+        /*.box{
+            width: 100%;
+            height: 700px;
+            padding: 20px;
+        }*/
+    </style>
+</head>
+
+<body>
+    
+    <div class="container" align="center">
+       <form align="center">
+        <!-- <div class="box">-->
+            <h1>Let's Count....</h1><br>
+            <textarea cols="50" rows="10" placeholder="start typing........" id="words"></textarea>
+            <br>
+            <p id="showdata"></p>
+            <p id="showwords"></p>
+            <p id="show"></p>
+            <br>
+            <!--<button onclick="co()">here</button>-->
+            <div class="butt">
+            <p>
+                <input type="button" class="btn" onclick="countchar();" value="Char count">
+                <input type="button" class="btn" onclick="countword();" value="Word count">
+                <!--<input type="reset" class="btn" value="clear">-->
+                <button class="btn" id="b" onclick="clear();">clear</button>
+            </p>
+        </div>
+    <!--</div>-->
+        </form>
+    </div>
+    <script type="text/javascript">
+        const countchar = () => {
+            let noc = document.getElementById('words').value.length;
+
+            document.getElementById('showdata').innerHTML = "The total characters =" + noc;
+            alert(noc);
+        }
+        const countword = () => {
+            let now = document.getElementById('words').value;
+            now = now.match(/\w+/g);//regular expression
+            now = now.length;
+            document.getElementById('showwords').innerHTML = "The total words =" + now;
+
+            alert(now);
+        }
+        const clear=()=>{
+            var some_item=null;
+            document.write(some_item);
+           // window.reload();
+        }
+
+
+    </script>
+</body>
+
+</html>
